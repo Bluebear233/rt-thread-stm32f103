@@ -35,7 +35,7 @@
 //#define RT_USING_SPI
 
 /* 使用finsh */
-//#define RT_USING_FINSH
+#define RT_USING_FINSH
 
 /* 使用制表符 */
 #define FINSH_USING_SYMTAB

@@ -9,6 +9,8 @@
 #include "rtthread.h"
 #include "stm32f1xx_hal.h"
 
+#define CONSOLE_DEVICE "uart1"
+
 /**
  * System Clock Configuration
  */
@@ -71,4 +73,9 @@ void rt_hw_board_init()
 	extern int _estack;
 	rt_system_heap_init((void*)&__bss_end, (void*)&_estack);
 #endif
+
+#ifdef RT_USING_CONSOLE
+	rt_console_set_device(CONSOLE_DEVICE);
+#endif
+
 }
