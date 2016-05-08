@@ -38,6 +38,7 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Kernel/include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Finsh&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Finsh/Finsh&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/DeviceDrivers/include&quot;"/>
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.754827977" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="STM32F103RFTx"/>
@@ -79,8 +80,9 @@
 						<toolChain id="fr.ac6.managedbuild.toolchain.gnu.cross.exe.debug.1800543415" name="Ac6 STM32 MCU GCC" superClass="fr.ac6.managedbuild.toolchain.gnu.cross.exe.debug" unusedChildren="">
 							<option id="fr.ac6.managedbuild.option.gnu.cross.mcu.1319431089.1416091734" name="Mcu" superClass="fr.ac6.managedbuild.option.gnu.cross.mcu.1319431089"/>
 							<option id="fr.ac6.managedbuild.option.gnu.cross.board.1046679106.1788831386" name="Board" superClass="fr.ac6.managedbuild.option.gnu.cross.board.1046679106"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="fr.ac6.managedbuild.targetPlatform.gnu.cross" isAbstract="false" osList="all" superClass="fr.ac6.managedbuild.targetPlatform.gnu.cross"/>
 							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.216995435" name="MCU GCC Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.303428746">
-								<option id="gnu.c.compiler.option.include.paths.1948989975" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<option id="gnu.c.compiler.option.include.paths.1948989975" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/HAL_Driver/Inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CMSIS/device&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CMSIS/core&quot;"/>

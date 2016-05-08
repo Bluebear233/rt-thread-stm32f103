@@ -5,6 +5,7 @@
  * Change Logs
  * Data           Author          Notes
  * 2016-5-7       bluebear233     第一版
+ * 2016-5-8       bluebear233     增加GPIO外设初始化和RTT板级驱动函数调用
  */
 #include "rtthread.h"
 #include "stm32f1xx_hal.h"
@@ -54,6 +55,20 @@ void SysTick_Handler(void)
 
 }
 /**
+ * @brief 开启所有GPIO外设时钟
+ */
+void all_gpio_enable(void)
+{
+	/* GPIO Ports Clock Enable */
+	__GPIOA_CLK_ENABLE();
+	__GPIOB_CLK_ENABLE();
+	__GPIOC_CLK_ENABLE();
+	__GPIOD_CLK_ENABLE();
+	__GPIOE_CLK_ENABLE();
+	__GPIOF_CLK_ENABLE();
+	__GPIOG_CLK_ENABLE();
+}
+/**
  * This function will initial STM32 board.
  */
 void rt_hw_board_init()
@@ -67,6 +82,7 @@ void rt_hw_board_init()
 	 * Configure the systemtick have interrupt in 10ms time basis
 	 */
 	SystemClock_Config();
+	all_gpio_enable();
 
 #ifdef RT_USING_HEAP
 	extern int __bss_end;
