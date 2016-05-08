@@ -16,15 +16,15 @@
 #include <rtdevice.h>
 #include "stm32f1xx_hal.h"
 
-/* 创建串口设备指针 */
-struct rt_serial_device *uart1;
-
 /* 赋值给rt_device的user_data */
 struct stm32_uart_user_data
 {
 	UART_HandleTypeDef uart;
-
 };
+
+/* 创建串口设备指针 */
+static struct rt_serial_device uart1;
+static struct stm32_uart_user_data uart1_user_data;
 
 /**
  * @brief UART MSP Initialization
@@ -213,7 +213,7 @@ rt_err_t stm32_uart_control(struct rt_serial_device *serial, int cmd, void *arg)
 		RT_ASSERT(0);
 	}
         
-        return RT_EOK;
+    return RT_EOK;
 }
 /**
  * @brief stm32串口发送
@@ -401,20 +401,20 @@ void USART1_IRQHandler(void)
 	rt_interrupt_enter();
 
 	/* 接收中断事件 */
-	if (__HAL_UART_GET_IT_SOURCE((UART_HandleTypeDef*) uart1->parent.user_data,
+	if (__HAL_UART_GET_IT_SOURCE(&(uart1_user_data.uart),
 			UART_IT_RXNE))
 	{
-		rt_hw_serial_isr(uart1, RT_SERIAL_EVENT_RX_IND);
-		__HAL_UART_CLEAR_FLAG((UART_HandleTypeDef*) uart1->parent.user_data,
+		rt_hw_serial_isr(&uart1, RT_SERIAL_EVENT_RX_IND);
+		__HAL_UART_CLEAR_FLAG(&(uart1_user_data.uart),
 				UART_IT_RXNE);
 	}
 
 	/* 发送中断事件  */
-	if (__HAL_UART_GET_IT_SOURCE((UART_HandleTypeDef*) uart1->parent.user_data,
+	if (__HAL_UART_GET_IT_SOURCE(&(uart1_user_data.uart),
 			UART_IT_TC))
 	{
-		rt_hw_serial_isr(uart1, RT_SERIAL_EVENT_TX_DONE);
-		__HAL_UART_CLEAR_FLAG((UART_HandleTypeDef*) uart1->parent.user_data,
+		rt_hw_serial_isr(&uart1, RT_SERIAL_EVENT_TX_DONE);
+		__HAL_UART_CLEAR_FLAG(&(uart1_user_data.uart),
 				UART_IT_TC);
 	}
 
@@ -430,12 +430,11 @@ void DMA1_Channel4_IRQHandler(void)
 	/* 进入中断 */
 	rt_interrupt_enter();
 
-	DMA_HandleTypeDef* hdma =
-			((struct stm32_uart_user_data*) uart1->parent.user_data)->uart.hdmatx;
+	DMA_HandleTypeDef* hdma = uart1_user_data.uart.hdmatx;
 
 	if (__HAL_DMA_GET_IT_SOURCE(hdma, DMA_IT_TC))
 	{
-		rt_hw_serial_isr(uart1, RT_SERIAL_EVENT_TX_DMADONE);
+		rt_hw_serial_isr(&uart1, RT_SERIAL_EVENT_TX_DMADONE);
 		__HAL_DMA_CLEAR_FLAG(hdma, __HAL_DMA_GET_TC_FLAG_INDEX(hdma));
 	}
 
@@ -448,15 +447,13 @@ void DMA1_Channel5_IRQHandler(void)
 	/* 进入中断 */
 	rt_interrupt_enter();
 
-	DMA_HandleTypeDef* hdma =
-			((struct stm32_uart_user_data*) uart1->parent.user_data)->uart.hdmarx;
+	DMA_HandleTypeDef* hdma = uart1_user_data.uart.hdmatx;
 
 	if (__HAL_DMA_GET_IT_SOURCE(hdma, DMA_IT_TC))
 	{
-		rt_hw_serial_isr(uart1, RT_SERIAL_EVENT_RX_DMADONE);
+		rt_hw_serial_isr(&uart1, RT_SERIAL_EVENT_RX_DMADONE);
 		__HAL_DMA_CLEAR_FLAG(hdma, __HAL_DMA_GET_TC_FLAG_INDEX(hdma));
 	}
-
 	/* 退出中断 */
 	rt_interrupt_leave();
 }
@@ -471,35 +468,26 @@ static const struct rt_uart_ops stm32_uart_ops =
  */
 int uart_init(void)
 {
-	/* init stm32_usart_user_data */
-	struct stm32_uart_user_data *user_data = rt_malloc(
-			sizeof(struct stm32_uart_user_data));
-
-	/* 清空申请到的内存  */
-	rt_memset(user_data, 0, sizeof(struct stm32_uart_user_data));
-
-	/* 申请串口设备句柄内存 */
-	uart1 = rt_malloc(sizeof(struct rt_serial_device));
 	struct serial_configure config = RT_SERIAL_CONFIG_DEFAULT;
 
 	/* 配置串口参数 */
-	uart1->config = config;
-	uart1->config.baud_rate = BAUD_RATE_115200;
-	uart1->config.data_bits = DATA_BITS_8;
-	uart1->config.parity = PARITY_NONE;
-	uart1->config.stop_bits = STOP_BITS_1;
-	uart1->config.bufsz = 64;
+	uart1.config = config;
+	uart1.config.baud_rate = BAUD_RATE_115200;
+	uart1.config.data_bits = DATA_BITS_8;
+	uart1.config.parity = PARITY_NONE;
+	uart1.config.stop_bits = STOP_BITS_1;
+	uart1.config.bufsz = 64;
 
 	/* 指定串口底层函数 */
-	uart1->ops = &stm32_uart_ops;
+	uart1.ops = &stm32_uart_ops;
 
 	/* 赋值串口的基地址  */
-	user_data->uart.Instance = USART1;
+	uart1_user_data.uart.Instance = USART1;
 
 	/* 注册串口 */
-	rt_hw_serial_register(uart1, "uart1",
+	rt_hw_serial_register(&uart1, "uart1",
 			RT_DEVICE_FLAG_RDWR | RT_DEVICE_FLAG_INT_RX | RT_DEVICE_FLAG_INT_TX
-					| RT_DEVICE_FLAG_DMA_TX | RT_DEVICE_FLAG_DMA_RX, user_data);
+					| RT_DEVICE_FLAG_DMA_TX | RT_DEVICE_FLAG_DMA_RX, &uart1_user_data);
 
 	return RT_EOK;
 }

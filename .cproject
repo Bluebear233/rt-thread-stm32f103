@@ -20,7 +20,7 @@
 							<option id="fr.ac6.managedbuild.option.gnu.cross.mcu.1319431089" name="Mcu" superClass="fr.ac6.managedbuild.option.gnu.cross.mcu" value="STM32F103RFTx" valueType="string"/>
 							<option id="fr.ac6.managedbuild.option.gnu.cross.board.1046679106" name="Board" superClass="fr.ac6.managedbuild.option.gnu.cross.board" value="atom" valueType="string"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="fr.ac6.managedbuild.targetPlatform.gnu.cross.1767735424" isAbstract="false" osList="all" superClass="fr.ac6.managedbuild.targetPlatform.gnu.cross"/>
-							<builder buildPath="${workspace_loc:/rt-thread-stm32f103}/Debug" id="fr.ac6.managedbuild.builder.gnu.cross.1799950782" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="fr.ac6.managedbuild.builder.gnu.cross">
+							<builder buildPath="${workspace_loc:/rt-thread-stm32f103}/Debug" id="fr.ac6.managedbuild.builder.gnu.cross.1799950782" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="false" superClass="fr.ac6.managedbuild.builder.gnu.cross">
 								<outputEntries>
 									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Debug"/>
 									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Release"/>
