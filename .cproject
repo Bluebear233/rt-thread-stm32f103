@@ -75,10 +75,40 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<folderInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1091654689.32780341" name="/" resourcePath="DeviceDrivers">
+						<toolChain id="fr.ac6.managedbuild.toolchain.gnu.cross.exe.debug.1800543415" name="Ac6 STM32 MCU GCC" superClass="fr.ac6.managedbuild.toolchain.gnu.cross.exe.debug" unusedChildren="">
+							<option id="fr.ac6.managedbuild.option.gnu.cross.mcu.1319431089.1416091734" name="Mcu" superClass="fr.ac6.managedbuild.option.gnu.cross.mcu.1319431089"/>
+							<option id="fr.ac6.managedbuild.option.gnu.cross.board.1046679106.1788831386" name="Board" superClass="fr.ac6.managedbuild.option.gnu.cross.board.1046679106"/>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.216995435" name="MCU GCC Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.303428746">
+								<option id="gnu.c.compiler.option.include.paths.1948989975" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CMSIS/device&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CMSIS/core&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/HAL_Driver/Inc/Legacy&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Kernel/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Finsh&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Finsh/Finsh&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/DeviceDrivers/include&quot;"/>
+								</option>
+								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c.222378829" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c"/>
+								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.s.925336155" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.s"/>
+							</tool>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.269759753" name="MCU G++ Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.1822638434"/>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.linker.839952591" name="MCU GCC Linker" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.linker.1695914864"/>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker.866086620" name="MCU G++ Linker" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker.1978475403"/>
+							<tool id="fr.ac6.managedbuild.tool.gnu.archiver.1828015861" name="MCU GCC Archiver" superClass="fr.ac6.managedbuild.tool.gnu.archiver.399453217"/>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.assembler.1472409998" name="MCU GCC Assembler" superClass="fr.ac6.managedbuild.tool.gnu.cross.assembler.961465956">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.600729172" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.assembler.input.1845118977" superClass="fr.ac6.managedbuild.tool.gnu.cross.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Applications"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="CMSIS"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="CORTEX-M3"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="DeviceDrivers"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Drivers"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Finsh"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="HAL_Driver"/>
