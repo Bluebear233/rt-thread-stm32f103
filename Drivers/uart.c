@@ -10,6 +10,7 @@
  * 2016-4-7       bluebear233     增加DMA发送
  * 2016-4-8       bluebear233     增加DMA接收
  * 2016-4-10      bluebear233     修改DMA初始化的位置
+ * 2016-5-8       bluebear233     修复stm32_uart_configure函数配置串口的Parity的BUG
  */
 
 #include <rtdevice.h>
@@ -148,13 +149,13 @@ rt_err_t stm32_uart_configure(struct rt_serial_device *serial,
 
 	switch (cfg->parity)
 	{
-	case USART_PARITY_NONE:
+	case PARITY_NONE:
 		uart->Init.Parity = UART_PARITY_NONE;
 		break;
-	case USART_PARITY_ODD:
+	case PARITY_ODD:
 		uart->Init.Parity = UART_PARITY_ODD;
 		break;
-	case USART_PARITY_EVEN:
+	case PARITY_EVEN:
 		uart->Init.Parity = UART_PARITY_EVEN;
 		break;
 	default:
