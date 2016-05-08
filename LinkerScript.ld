@@ -56,7 +56,7 @@ ENTRY(Reset_Handler)
 _estack = 0x20018000;    /* end of RAM */
 
 _Min_Heap_Size = 0;      /* required amount of heap  */
-_Min_Stack_Size = 0x400; /* required amount of stack */
+_Min_Stack_Size = 0x100; /* required amount of stack */
 
 /* Memories definition */
 MEMORY
@@ -88,6 +88,24 @@ SECTIONS
 
     KEEP (*(.init))
     KEEP (*(.fini))
+    
+    /* section information for finsh shell */
+    . = ALIGN(4);
+    __fsymtab_start = .;
+    KEEP(*(FSymTab))
+    __fsymtab_end = .;
+    . = ALIGN(4);
+    __vsymtab_start = .;
+    KEEP(*(VSymTab))
+    __vsymtab_end = .;
+    . = ALIGN(4);
+
+    /* section information for initial. */
+    . = ALIGN(4);
+    __rt_init_start = .;
+    KEEP(*(SORT(.rti_fn*)))
+    __rt_init_end = .;
+    . = ALIGN(4);
 
     . = ALIGN(4);
     _etext = .;        /* define a global symbols at end of code */
@@ -188,7 +206,7 @@ SECTIONS
     . = ALIGN(8);
   } >RAM
 
-  
+  __bss_end = .;
 
   /* Remove information from the compiler libraries */
   /DISCARD/ :
