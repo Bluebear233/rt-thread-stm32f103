@@ -32,7 +32,7 @@
 #define RT_USING_SERIAL
 //
 ///* 使用SPI驱动架构  */
-//#define RT_USING_SPI
+#define RT_USING_SPI
 
 /* 使用finsh */
 #define RT_USING_FINSH
