@@ -20,16 +20,16 @@
 							<option id="fr.ac6.managedbuild.option.gnu.cross.mcu.1319431089" name="Mcu" superClass="fr.ac6.managedbuild.option.gnu.cross.mcu" value="STM32F103RFTx" valueType="string"/>
 							<option id="fr.ac6.managedbuild.option.gnu.cross.board.1046679106" name="Board" superClass="fr.ac6.managedbuild.option.gnu.cross.board" value="atom" valueType="string"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="fr.ac6.managedbuild.targetPlatform.gnu.cross.1767735424" isAbstract="false" osList="all" superClass="fr.ac6.managedbuild.targetPlatform.gnu.cross"/>
-							<builder buildPath="${workspace_loc:/rt-thread-stm32f103}/Debug" id="fr.ac6.managedbuild.builder.gnu.cross.1799950782" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="false" superClass="fr.ac6.managedbuild.builder.gnu.cross">
+							<builder buildPath="${workspace_loc:/rt-thread-stm32f103}/Debug" id="fr.ac6.managedbuild.builder.gnu.cross.1799950782" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="GNU Make 构建器" parallelBuildOn="false" superClass="fr.ac6.managedbuild.builder.gnu.cross">
 								<outputEntries>
 									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Debug"/>
 									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Release"/>
 								</outputEntries>
 							</builder>
 							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.303428746" name="MCU GCC Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler">
-								<option id="fr.ac6.managedbuild.gnu.c.compiler.option.optimization.level.1405117143" name="Optimization Level" superClass="fr.ac6.managedbuild.gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false"/>
-								<option id="gnu.c.compiler.option.debugging.level.246513686" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
-								<option id="gnu.c.compiler.option.include.paths.503387630" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+								<option id="fr.ac6.managedbuild.gnu.c.compiler.option.optimization.level.1405117143" name="优化级别" superClass="fr.ac6.managedbuild.gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.debugging.level.246513686" name="调试级别" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.include.paths.503387630" name="包含路径（-I）" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/HAL_Driver/Inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CMSIS/device&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CMSIS/core&quot;"/>
@@ -39,8 +39,9 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Finsh&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Finsh/Finsh&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/DeviceDrivers/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Drivers/include&quot;"/>
 								</option>
-								<option id="gnu.c.compiler.option.preprocessor.def.symbols.754827977" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.754827977" name="已定义的符号（-D）" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="STM32F103RFTx"/>
 									<listOptionValue builtIn="false" value="STM32F1"/>
 									<listOptionValue builtIn="false" value="STM32"/>
@@ -52,8 +53,8 @@
 								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.s.53655137" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.s"/>
 							</tool>
 							<tool id="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.1822638434" name="MCU G++ Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler">
-								<option id="fr.ac6.managedbuild.gnu.cpp.compiler.option.optimization.level.794561384" name="Optimization Level" superClass="fr.ac6.managedbuild.gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false"/>
-								<option id="gnu.cpp.compiler.option.debugging.level.1979653285" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="fr.ac6.managedbuild.gnu.cpp.compiler.option.optimization.level.794561384" name="优化级别" superClass="fr.ac6.managedbuild.gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.1979653285" name="调试级别" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 							</tool>
 							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.linker.1695914864" name="MCU GCC Linker" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.linker">
 								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.86242242" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
@@ -64,7 +65,7 @@
 							<tool id="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker.1978475403" name="MCU G++ Linker" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker"/>
 							<tool id="fr.ac6.managedbuild.tool.gnu.archiver.399453217" name="MCU GCC Archiver" superClass="fr.ac6.managedbuild.tool.gnu.archiver"/>
 							<tool id="fr.ac6.managedbuild.tool.gnu.cross.assembler.961465956" name="MCU GCC Assembler" superClass="fr.ac6.managedbuild.tool.gnu.cross.assembler">
-								<option id="gnu.both.asm.option.include.paths.1623402323" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+								<option id="gnu.both.asm.option.include.paths.1623402323" name="包含路径（-I）" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CMSIS/core&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CMSIS/device&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/&quot;"/>
@@ -82,7 +83,7 @@
 							<option id="fr.ac6.managedbuild.option.gnu.cross.board.1046679106.1788831386" name="Board" superClass="fr.ac6.managedbuild.option.gnu.cross.board.1046679106"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="fr.ac6.managedbuild.targetPlatform.gnu.cross" isAbstract="false" osList="all" superClass="fr.ac6.managedbuild.targetPlatform.gnu.cross"/>
 							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.216995435" name="MCU GCC Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.303428746">
-								<option id="gnu.c.compiler.option.include.paths.1948989975" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<option id="gnu.c.compiler.option.include.paths.1948989975" name="包含路径（-I）" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/HAL_Driver/Inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CMSIS/device&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CMSIS/core&quot;"/>
@@ -92,6 +93,7 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Finsh&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Finsh/Finsh&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/DeviceDrivers/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Drivers/include&quot;"/>
 								</option>
 								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c.222378829" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c"/>
 								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.s.925336155" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.s"/>
@@ -196,15 +198,6 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="rt-thread-stm32f103.fr.ac6.managedbuild.target.gnu.cross.exe.1560982291" name="Executable" projectType="fr.ac6.managedbuild.target.gnu.cross.exe"/>
 	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="fr.ac6.managedbuild.config.gnu.cross.exe.release.1516373123;fr.ac6.managedbuild.config.gnu.cross.exe.release.1516373123.;fr.ac6.managedbuild.tool.gnu.cross.c.compiler.273155121;fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c.958214902">
-			<autodiscovery enabled="false" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1091654689;fr.ac6.managedbuild.config.gnu.cross.exe.debug.1091654689.;fr.ac6.managedbuild.tool.gnu.cross.c.compiler.303428746;fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c.1093551790">
-			<autodiscovery enabled="false" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
 		<configuration configurationName="Release">
@@ -213,5 +206,14 @@
 		<configuration configurationName="Debug">
 			<resource resourceType="PROJECT" workspacePath="/rt-thread-stm32f103"/>
 		</configuration>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1091654689;fr.ac6.managedbuild.config.gnu.cross.exe.debug.1091654689.;fr.ac6.managedbuild.tool.gnu.cross.c.compiler.303428746;fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c.1093551790">
+			<autodiscovery enabled="false" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="fr.ac6.managedbuild.config.gnu.cross.exe.release.1516373123;fr.ac6.managedbuild.config.gnu.cross.exe.release.1516373123.;fr.ac6.managedbuild.tool.gnu.cross.c.compiler.273155121;fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c.958214902">
+			<autodiscovery enabled="false" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
 	</storageModule>
 </cproject>
