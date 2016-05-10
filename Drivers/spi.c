@@ -6,19 +6,21 @@
  * Data           Author          Notes
  * 2016-4-11      bluebear233     第一版
  * 2016-4-12      bludbear233     优化SPI传输函数
+ * 2016-5-10      bludbear233     优化SPI内存使用
  */
 
 #include <rtdevice.h>
 #include <spi.h>
 #include "stm32f1xx_hal.h"
 
-struct rt_spi_bus *spi1;
-
 struct stm32_spi_user_data
 {
 	SPI_HandleTypeDef spi;
 	SPI_TypeDef *Instance;
 };
+
+static struct rt_spi_bus spi1;
+static struct stm32_spi_user_data spi1_user_data;
 
 void HAL_SPI_MspInit(SPI_HandleTypeDef* hspi)
 {
@@ -223,20 +225,11 @@ const struct rt_spi_ops stm32_spi_ops =
 
 int spi_init(void)
 {
-	struct stm32_spi_user_data *spi_user_data;
-	spi_user_data = rt_malloc(sizeof(struct stm32_spi_user_data));
-	RT_ASSERT(spi_user_data != RT_NULL);
-	rt_memset(spi_user_data, 0, sizeof(struct stm32_spi_user_data));
+	spi1_user_data.Instance = SPI1;
 
-	spi1 = rt_malloc(sizeof(struct rt_spi_bus));
-	RT_ASSERT(spi1 != RT_NULL);
-	rt_memset(spi1, 0, sizeof(struct rt_spi_bus));
+	spi1.parent.user_data = &spi1_user_data;
 
-	spi_user_data->Instance = SPI1;
-
-	spi1->parent.user_data = spi_user_data;
-
-	rt_spi_bus_register(spi1, "spi1", &stm32_spi_ops);
+	rt_spi_bus_register(&spi1, "spi1", &stm32_spi_ops);
 
 	return RT_EOK;
 }
