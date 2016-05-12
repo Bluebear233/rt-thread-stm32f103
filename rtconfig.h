@@ -4,22 +4,22 @@
 
 
 
-///* SECTION: device filesystem */
-//#define RT_USING_DFS
-//#define RT_USING_DFS_ELMFAT
-//#define DFS_USING_WORKDIR
-//#define RT_DFS_ELM_REENTRANT
-//#define RT_DFS_ELM_WORD_ACCESS
-//#define RT_DFS_ELM_DRIVES           1
-//#define RT_DFS_ELM_USE_LFN          0 //这里一般设置为0,不使用长文件名,否则需要加入另外的源文件才能编译通过
-//#define RT_DFS_ELM_MAX_LFN          255
-//#define RT_DFS_ELM_MAX_SECTOR_SIZE  4096     //这里一定要与实际的spi flash一个扇区所包含的字节数相符,太小了会出现内存非法覆盖的情况
-//
-//
-///* the max number of mounted filesystem */
-//#define DFS_FILESYSTEMS_MAX         2
-///* the max number of opened files       */
-//#define DFS_FD_MAX                  4
+/* SECTION: device filesystem */
+#define RT_USING_DFS
+#define RT_USING_DFS_ELMFAT
+#define DFS_USING_WORKDIR
+#define RT_DFS_ELM_REENTRANT
+#define RT_DFS_ELM_WORD_ACCESS
+#define RT_DFS_ELM_DRIVES           1
+#define RT_DFS_ELM_USE_LFN          0 //这里一般设置为0,不使用长文件名,否则需要加入另外的源文件才能编译通过
+#define RT_DFS_ELM_MAX_LFN          255
+#define RT_DFS_ELM_MAX_SECTOR_SIZE  4096     //这里一定要与实际的spi flash一个扇区所包含的字节数相符,太小了会出现内存非法覆盖的情况
+
+
+/* the max number of mounted filesystem */
+#define DFS_FILESYSTEMS_MAX         2
+/* the max number of opened files       */
+#define DFS_FD_MAX                  4
 
 
 /* 使用组件初始化 */
