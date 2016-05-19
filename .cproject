@@ -149,6 +149,9 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1091654689.218221054" name="cc936.c" rcbsApplicability="disable" resourcePath="Filesystems/cc936.c" toolsToInvoke="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.1791713232.376525240">
+						<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.1791713232.376525240" name="MCU GCC Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.1791713232"/>
+					</fileInfo>
 					<folderInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1091654689.32780341" name="/" resourcePath="DeviceDrivers">
 						<toolChain id="fr.ac6.managedbuild.toolchain.gnu.cross.exe.debug.1800543415" name="Ac6 STM32 MCU GCC" superClass="fr.ac6.managedbuild.toolchain.gnu.cross.exe.debug" unusedChildren="">
 							<option id="fr.ac6.managedbuild.option.gnu.cross.mcu.1319431089.1416091734" name="Mcu" superClass="fr.ac6.managedbuild.option.gnu.cross.mcu.1319431089"/>
@@ -186,7 +189,7 @@
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="CORTEX-M3"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="DeviceDrivers"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Filesystems"/>
+						<entry excluding="ccfile.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Filesystems"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Finsh"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="HAL_Driver"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Kernel"/>
@@ -289,4 +292,5 @@
 			<autodiscovery enabled="false" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>
