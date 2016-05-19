@@ -9,8 +9,7 @@
  */
 #include "rtthread.h"
 #include "stm32f1xx_hal.h"
-
-#define CONSOLE_DEVICE "uart1"
+#include "board.h"
 
 /**
  * System Clock Configuration

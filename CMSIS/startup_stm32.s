@@ -135,7 +135,7 @@ g_pfnVectors:
 	.word	0
 	.word	0
 	.word	0
-	.word	0      /* DMA1 Channel 4 */
+	.word	DMA1_Channel2_IRQHandler      /* DMA1 Channel 4 */
 	.word	DMA1_Channel3_IRQHandler      /* DMA1 Channel 4 */
 	.word	DMA1_Channel4_IRQHandler      /* DMA1 Channel 4 */
 	.word	DMA1_Channel5_IRQHandler      /* DMA1 Channel 5 */
